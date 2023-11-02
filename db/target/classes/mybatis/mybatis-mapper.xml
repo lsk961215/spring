@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Member">
+	<resultMap type="MemberVO" id="MemberMap">
+		<id column="USERID" property="memberId"></id>
+		<result column="PASSWD" property="memberPw"></result>
+		<result column="BIRTHYEAR" property="memberBirth"></result>
+		<result column="REGDATE" property="memberReg"></result>
+	</resultMap>
+	
+	<select id="searchMember" resultType="string">
+		SELECT * FROM member WHERE USERID = #{memberId}
+	</select>
+</mapper>
