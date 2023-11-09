@@ -11,6 +11,11 @@ import com.spring.member.vo.MemberVO;
 @Controller
 public class MemberController {
 	
+	@RequestMapping("/")
+	public String goMain() {
+		return "main";
+	}
+	
 	@RequestMapping("/mem.do")
 	public void getMember() {
 		MemberDAO dao = new MemberDAO();
